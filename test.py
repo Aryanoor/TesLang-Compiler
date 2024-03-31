@@ -13,5 +13,5 @@ if __name__ == '__main__':
     end
 """
     tok = Token(data)
-    lexer = Lexer(tok)
-    lexer.build(data)
+    program = Lexer(tok)
+    program.run(data)
