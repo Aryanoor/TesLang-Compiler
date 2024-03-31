@@ -1,0 +1,7 @@
+<% Here Is A Comment %>
+fn sum(a as int, b as int) <int>
+begin
+    result :: int = 0;
+    result = a + b;
+    return result
+end
