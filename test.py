@@ -1,7 +1,17 @@
-from consts import dictionary
-import re
-test = "int i=10;"
+from Lexer.lexer import Lexer
+from Lexer.token import Token
 
-for pattern in dictionary:
-    if re.search(pattern=pattern['REGEX'], string=test):
-        print(f"{pattern['VALUE']} {pattern['TOKEN']}")
+if __name__ == '__main__':
+
+    data = """
+    <% Here Is A Comment %>
+    fn sum(a as int, b as int) <int>
+    begin
+        result :: int = 0;
+        result = a + b;
+        return result
+    end
+"""
+    tok = Token(data)
+    lexer = Lexer(tok)
+    lexer.build(data)

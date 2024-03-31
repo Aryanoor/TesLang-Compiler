@@ -3,6 +3,8 @@ dictionary = [
     {'TOKEN': "FN", 'VALUE': "fn", 'REGEX': r'fn'},
     {'TOKEN': "RETURN", 'VALUE': "return", 'REGEX': r'return'},
     {'TOKEN': "NULL_TYPE", 'VALUE': "null", 'REGEX': r'null'},
+    {'TOKEN': "AS", 'VALUE': "as", 'REGEX': r'as'},
+
 
     #Punctuation and Delimiters:
     {'TOKEN': "LPAREN", 'VALUE': "(", 'REGEX': r'\('},
