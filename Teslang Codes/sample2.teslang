@@ -1,4 +1,3 @@
-<% Some random comments %>
 fn sum(numlist as vector) <int>{
     result :: int = 0;
 

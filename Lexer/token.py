@@ -1,5 +1,3 @@
-import ply.lex as lex
-
 
 class Token:
 
@@ -8,14 +6,14 @@ class Token:
 
     # List of token names
     tokens = (
-        'FN', 'RETURN', 'NULL_TYPE', 'AS', 'BEGIN', 'END',
+        'FN', 'RETURN', 'NULL_TYPE', 'AS', 'BEGIN', 'END', 'TO',
         'LPAREN', 'RPAREN', 'LCURLYBR', 'RCURLYBR', 'LBRACKET', 'RBRACKET', 'SEMI_COLON', 'COLON', 'COMMA', 'DBL_COLON',
         'PLUS', 'MINUS', 'TIMES', 'DIVIDE', 'MOD',
         'AND', 'OR', 'NOT', 'ASSIGN', 'EQUAL', 'NOT_EQUAL', 'LESS_THAN', 'LESS_THAN_EQUAL', 'GREATER_THAN', 'GREATER_THAN_EQUAL',
         'FOR_LOOP', 'WHILE_LOOP',
         'IF', 'ELSE',
         'INT_TYPE', 'STR_TYPE', 'VECTOR_TYPE',
-        'COMMENT',
+        'COMMENT', 'ENTER',
         'NUMBER', 'IDENTIFIER'
     )
 
@@ -27,6 +25,7 @@ class Token:
     t_AS = r'as'
     t_BEGIN = r'begin'
     t_END = r'end'
+    t_TO = r'to'
 
     ##Punctuation and Delimiters:
     t_LPAREN = r'\('
@@ -104,14 +103,14 @@ class Token:
             'null': 'NULL_TYPE',
             'var': 'VAR',
             'return': 'RETURN',
-            'for': 'FOR',
-            'while': 'WHILE',
+            'for': 'FOR_LOOP',
+            'while': 'WHILE_LOOP',
             'if': 'IF',
             'else': 'ELSE',
+            'to': 'TO'
         }
 
         t.type = keywords.get(t.value, 'IDENTIFIER')
-
         return t
 
     # This function is defined to handle errors that occur during tokenization.
