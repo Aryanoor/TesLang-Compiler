@@ -11,7 +11,7 @@ class Token:
 
     # List of token names
     tokens = (
-        'FN', 'RETURN', 'NULL_TYPE', 'AS', 'BEGIN', 'END', 'TO',
+        'FN', 'RETURN', 'NULL_TYPE', 'AS', 'BEGIN', 'END', 'TO', 'SCAN', 'PRINT', 'LIST', 'LENGTH', 'EXIT',
         'LPAREN', 'RPAREN', 'LCURLYBR', 'RCURLYBR', 'LBRACKET', 'RBRACKET', 'SEMI_COLON', 'COLON', 'COMMA', 'DBL_COLON',
         'PLUS', 'MINUS', 'TIMES', 'DIVIDE', 'MOD',
         'AND', 'OR', 'NOT', 'ASSIGN', 'EQUAL', 'NOT_EQUAL', 'LESS_THAN', 'LESS_THAN_EQUAL', 'GREATER_THAN',
@@ -33,6 +33,11 @@ class Token:
     t_BEGIN = r'begin'
     t_END = r'end'
     t_TO = r'to'
+    t_SCAN = r'scan'
+    t_PRINT = r'list'
+    t_LIST = r'list'
+    t_LENGTH = r'length'
+    t_EXIT = r'exit'
 
     ##Punctuation and Delimiters:
     # Define regular expressions for punctuation and delimiters and assign token names to them
@@ -141,7 +146,12 @@ class Token:
             'while': 'WHILE_LOOP',
             'if': 'IF',
             'else': 'ELSE',
-            'to': 'TO'
+            'to': 'TO',
+            'scan': 'SCAN',
+            'print': 'PRINT',
+            'list': 'LIST',
+            'length': 'LENGTH',
+            'exit': 'EXIT'
         }
         # Check if the identifier is a keyword, update token type accordingly
         t.type = keywords.get(t.value, 'IDENTIFIER')
