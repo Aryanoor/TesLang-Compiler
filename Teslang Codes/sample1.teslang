@@ -1,4 +1,10 @@
-<% Here Is A Comment %>
+<%Hello
+    Here Is A
+    Comment
+    <% And Another Comment %>
+     No Openning Tag %>
+     <% No Closing Tag
+Bye %>
 fn sum(a as int, b as int) <int>
 begin
     returntest :: int = 0;
