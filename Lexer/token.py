@@ -18,7 +18,7 @@ class Token:
         'GREATER_THAN_EQUAL',
         'FOR_LOOP', 'WHILE_LOOP',
         'IF', 'ELSE',
-        'INT_TYPE', 'STR_TYPE', 'VECTOR_TYPE', 'BOOL_TYPE',
+        'INT_TYPE', 'STR_TYPE', 'VECTOR_TYPE', 'BOOL_TYPE', 'SINGLE_QT', 'DBL_QT',
         'COMMENT', 'ENTER',
         'NUMBER', 'IDENTIFIER'
     )
@@ -111,6 +111,40 @@ class Token:
         #     LexToken: The token object with updated value.
         r'[0-9]+'
         t.value = int(t.value)
+        return t
+
+    def t_SINGLE_QT(self, t):
+        r"[']"
+        depth = 1
+        my_string = ""
+
+        while depth > 0:
+            next_char = t.lexer.lexdata[t.lexer.lexpos]
+            if next_char == "'":
+                print(my_string)
+                depth -= 1
+            if next_char == '\n':
+                t.lexer.lineno += 1
+            my_string += next_char
+            t.lexer.lexpos += 1
+        t.value = my_string
+        return t
+
+    def t_DBL_QT(self, t):
+        r'["]'
+        depth = 1
+        my_string = ""
+
+        while depth > 0:
+            next_char = t.lexer.lexdata[t.lexer.lexpos]
+            if next_char == '"':
+                print(my_string)
+                depth -= 1
+            if next_char == '\n':
+                t.lexer.lineno += 1
+            my_string += next_char
+            t.lexer.lexpos += 1
+        t.value = my_string
         return t
 
     def t_COMMENT(self, t):

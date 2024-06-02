@@ -7,7 +7,13 @@ fn sum(a as int, b as int) <int>
 begin
     returntest :: int = 0;
     scan(fntest)
+    str my_string = "Hello"
+    fntest += 1
     returntest = a + b;
+    str test1 = "salam
+    My friend
+    here is multyline string"
+
     <% random comment
     some txt here
 <% another comment here %>
