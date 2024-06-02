@@ -1,14 +1,22 @@
-<%Hello
-    Here Is A
-    Comment
-    <% And Another Comment %>
-     No Openning Tag %>
-     <% No Closing Tag
-Bye %>
+<% random comment
+    some txt here
+<% another comment here %>
+%>
+
 fn sum(a as int, b as int) <int>
 begin
     returntest :: int = 0;
     scan(fntest)
     returntest = a + b;
+    <% random comment
+    some txt here
+<% another comment here %>
+%>
     return list(returntest)
 end
+
+<% random comment
+    some txt here
+    <% another comment here %>
+%>
+
