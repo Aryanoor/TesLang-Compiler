@@ -1,6 +1,6 @@
 import ply.yacc as yacc
-from Lexer.lexer import *
-from AST import *
+from Lexer.lexer import myLex
+from Parser.AST import *
 
 
 def find_position(p, token_index):
@@ -160,10 +160,13 @@ def p_error(p):
         print("Syntax error at EOF")
 
 
-if __name__ == '__main__':
-    parser = yacc.yacc()
-    with open('../Teslang Codes/sample3.teslang', 'r') as file:
-        data1 = file.read()
-
-    result = parser.parse(data1, tracking=True)
-    print(result)
+# if __name__ == '__main__':
+#     parser = yacc.yacc()
+#     with open('../Teslang Codes/sample3.teslang', 'r') as file:
+#         data1 = file.read()
+#
+#     my_lexer = myLex(data1)
+#
+#     ast = parser.parse(data1, tracking=True, lexer=my_lexer)
+#     checker = SemanticChecker()
+#     checker.visit(ast)

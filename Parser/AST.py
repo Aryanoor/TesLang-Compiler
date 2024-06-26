@@ -122,6 +122,7 @@ class Identifier(Expression):
         super().__init__(pos)
         self.name = name
 
+
 class Number(Expression):
     """Node for numeric literals."""
     def __init__(self, value, pos):

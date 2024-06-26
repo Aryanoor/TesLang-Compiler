@@ -249,6 +249,7 @@ def find_column(input, token):
 
 
 def myLex(inp):
+    lexer = lex.lex()
     lexer.input(inp)
 
     # Tokenize
@@ -258,9 +259,9 @@ def myLex(inp):
     #         break  # No more input
     #     print(tok)
 
-
-with open('../Teslang Codes/sample1.teslang', 'r') as file:
-    data = file.read()
-lexer = lex.lex()
-myLex(data)
+#
+# with open('../Teslang Codes/sample1.teslang', 'r') as file:
+#     data = file.read()
+# lexer = lex.lex()
+# myLex(data)
 
