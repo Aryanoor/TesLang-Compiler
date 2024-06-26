@@ -1,28 +1,12 @@
-<% random comment
-    some txt here
-<% another comment here %>
-%>
-
 fn sum(a as int, b as int) <int>
-begin
-    returntest :: int = 0;
-    scan(fntest)
-    str my_string = "Hello"
-    fntest += 1
+{
+    scan(fntest);
+    test :: boolean = true;
+    my_string :: str = "Hello";
     returntest = a + b;
-    str test1 = "salam
-    My friend
-    here is multyline string"
-
-    <% random comment
-    some txt here
-<% another comment here %>
-%>
-    return list(returntest)
-end
-
-<% random comment
-    some txt here
-    <% another comment here %>
-%>
-
+    test_string :: str = '
+    This is a multiline string
+    that spans multiple lines.
+    ';
+    return list(returntest);
+}

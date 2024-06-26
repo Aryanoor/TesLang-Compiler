@@ -1,0 +1,6 @@
+fn sum(a as int, b as int) <vector>
+{
+    result :: int = 0;
+    result = a + b;
+    return result;
+}
